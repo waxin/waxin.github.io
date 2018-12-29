@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-29T10:35:20.010Z</updated>
+  <updated>2018-12-29T10:36:45.214Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,16 @@
     <link href="http://yoursite.com/2018/12/29/BurnSide-Lemma/"/>
     <id>http://yoursite.com/2018/12/29/BurnSide-Lemma/</id>
     <published>2018-12-29T06:41:10.000Z</published>
-    <updated>2018-12-29T10:35:20.010Z</updated>
+    <updated>2018-12-29T10:36:45.214Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="My-understanding-of-Bayes’-Rules"><a href="#My-understanding-of-Bayes’-Rules" class="headerlink" title="My understanding of Bayes’ Rules"></a>My understanding of Bayes’ Rules</h1><ul><li>For a long time, I can’t firgue out why we need Bayes’ Rules. I’d like to write something about it after I reader <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank" rel="noopener">Wikipedia of Bayes’ theorem</a></li></ul>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;My-understanding-of-Bayes’-Rules&quot;&gt;&lt;a href=&quot;#My-understanding-of-Bayes’-Rules&quot; class=&quot;headerlink&quot; title=&quot;My understanding of Bayes’ R
+      
     
     </summary>
     
