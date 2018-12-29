@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-29T11:32:24.399Z</updated>
+  <updated>2018-12-29T11:51:43.158Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2018/12/29/test/"/>
+    <id>http://yoursite.com/2018/12/29/test/</id>
+    <published>2018-12-29T11:51:08.000Z</published>
+    <updated>2018-12-29T11:51:43.158Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="My-understanding-of-Bayes’-Rules"><a href="#My-understanding-of-Bayes’-Rules" class="headerlink" title="My understanding of Bayes’ Rules"></a>My understanding of Bayes’ Rules</h1><ul><li><p>For a long time, I can’t firgue out why we need Bayes’ Rules. I’d like to write something about it after I reader <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank" rel="noopener">Wikipedia of Bayes’ theorem</a></p></li><li><p>The statement of Bayes’ theorem is </p></li><li><p><script type="math/tex">\lbrace表达式\rbrace</script>.</p></li><li><p>I understand the meaning of this formula, but I can’t understand the practical significance of this formula.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;My-understanding-of-Bayes’-Rules&quot;&gt;&lt;a href=&quot;#My-understanding-of-Bayes’-Rules&quot; class=&quot;headerlink&quot; title=&quot;My understanding of Bayes’ R
+      
+    
+    </summary>
+    
+    
+      <category term="test" scheme="http://yoursite.com/tags/test/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
