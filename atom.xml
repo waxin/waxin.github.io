@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-29T12:10:47.336Z</updated>
+  <updated>2018-12-30T01:59:46.126Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,88 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test1</title>
-    <link href="http://yoursite.com/2018/12/29/test1/"/>
-    <id>http://yoursite.com/2018/12/29/test1/</id>
-    <published>2018-12-29T12:09:01.000Z</published>
-    <updated>2018-12-29T12:10:47.336Z</updated>
+    <title>BurnSide&#39;s Lemma</title>
+    <link href="http://yoursite.com/2018/12/30/BurnSide-Lemma/"/>
+    <id>http://yoursite.com/2018/12/30/BurnSide-Lemma/</id>
+    <published>2018-12-30T00:35:41.000Z</published>
+    <updated>2018-12-30T01:59:46.126Z</updated>
     
-    <content type="html"><![CDATA[<p>这是一个测试文件</p><a id="more"></a><h1 id="随便的标题"><a href="#随便的标题" class="headerlink" title="随便的标题"></a>随便的标题</h1><h2 id="子标题1"><a href="#子标题1" class="headerlink" title="子标题1"></a>子标题1</h2><h2 id="子标题2"><a href="#子标题2" class="headerlink" title="子标题2"></a>子标题2</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是一个测试文件&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="test1" scheme="http://yoursite.com/tags/test1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2018/12/29/test/"/>
-    <id>http://yoursite.com/2018/12/29/test/</id>
-    <published>2018-12-29T11:51:08.000Z</published>
-    <updated>2018-12-29T12:16:04.486Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="My-understanding-of-Bayes’-Rules"><a href="#My-understanding-of-Bayes’-Rules" class="headerlink" title="My understanding of Bayes’ Rules"></a>My understanding of Bayes’ Rules</h1><ul><li><p>For a long time, I can’t firgue out why we need Bayes’ Rules. I’d like to write something about it after I reader <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank" rel="noopener">Wikipedia of Bayes’ theorem</a></p></li><li><p>The statement of Bayes’ theorem is </p></li><li><p><script type="math/tex">\lbrace表达式\rbrace</script>.</p></li><li><p>I understand the meaning of this formula, but I can’t understand the practical significance of this formula.</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="Burnside’s-lemma"><a href="#Burnside’s-lemma" class="headerlink" title="Burnside’s lemma"></a>Burnside’s lemma</h1><h2 id="问题引入"><a href="#问题引入" class="headerlink" title="问题引入"></a>问题引入</h2><ul><li><p>利用三种颜色给一个正三边形的顶点着色，在考虑图案重复的情况下总共有多少不同的着色方法？</p></li><li><p>上面的着色问题是一类计数问题，在计数的过程中由于需要考虑到去除重复的元素，所以问题会显得比较复杂<img src="/Users/wangxin/Blog/source/img/colour_symmetries.png" align="left"></p><p style="background-color:powderblue;font-size:15px;">Figure 1 </p><p>以上图为例，六种三角形的着色实际是等价的，只能算一种着色方式。</p></li></ul><h2 id="Burnside’s-lemma定义"><a href="#Burnside’s-lemma定义" class="headerlink" title="Burnside’s lemma定义"></a>Burnside’s lemma定义</h2><ul><li><blockquote><p><strong>Burnside’s lemma</strong>, sometimes also called <strong>Burnside’s counting theorem</strong>, the <strong>Cauchy–Frobenius lemma</strong>,<strong>orbit-counting theorem</strong>, or <strong>The Lemma that is not Burnside’s</strong> , is a result in <a href="https://en.wikipedia.org/wiki/Group_theory" target="_blank" rel="noopener">group theory</a> which is often useful in taking account of <a href="https://en.wikipedia.org/wiki/Symmetry" target="_blank" rel="noopener">symmetry</a> when counting mathematical objects.In the following, let <em>G</em> be a <a href="https://en.wikipedia.org/wiki/Finite_set" target="_blank" rel="noopener">finite</a> <a href="https://en.wikipedia.org/wiki/Group_(mathematics" target="_blank" rel="noopener">group</a>) that <a href="https://en.wikipedia.org/wiki/Group_action" target="_blank" rel="noopener">acts</a> on a <a href="https://en.wikipedia.org/wiki/Set_(mathematics" target="_blank" rel="noopener">set</a>) <em>X</em>. For each <em>g</em> in <em>G</em> let <em>Xg</em> denote the set of <a href="https://en.wikipedia.org/wiki/Element_(mathematics" target="_blank" rel="noopener">elements</a>) in <em>X</em> that are <a href="https://en.wikipedia.org/wiki/Fixed_point_(mathematics" target="_blank" rel="noopener">fixed by</a>) <em>g</em> (also said to be left <a href="https://en.wikipedia.org/wiki/Invariant_(mathematics" target="_blank" rel="noopener">invariant</a>) by <em>g</em>), i.e. <em>$X^g $</em> = { <em>x</em> ∈ <em>X</em> | <em>g</em>.<em>x</em> = <em>x</em> }. Burnside’s lemma asserts the following formula for the number of <a href="https://en.wikipedia.org/wiki/Orbit_(group_theory" target="_blank" rel="noopener">orbits</a>), denoted |<em>X</em>/<em>G</em>|</p><p><a href="https://en.wikipedia.org/wiki/Burnside%27s_lemma" target="_blank" rel="noopener">Burnside’s lemma</a></p></blockquote></li><li><p>上面给出了Burnside’s lemma的定义，其具体的证明过程可参考给出的链接。利用Burnside’s lemma我们现在可以来试着解决一开始给出的着色问题了。</p></li></ul><h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ul><li>着色问题的形式化定义<ul><li>$X :=\{不考虑重复的所有着色图案\}$</li><li>$G :=\{对任一图案的所有变换\}$</li><li>$|X/G| := 所有不重复的着色方式总数$</li></ul></li><li>$G$ 代表了对图案的变换方式，图1实际上就包含了对三角形的所有变换方式。</li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;My-understanding-of-Bayes’-Rules&quot;&gt;&lt;a href=&quot;#My-understanding-of-Bayes’-Rules&quot; class=&quot;headerlink&quot; title=&quot;My understanding of Bayes’ R
+        &lt;h1 id=&quot;Burnside’s-lemma&quot;&gt;&lt;a href=&quot;#Burnside’s-lemma&quot; class=&quot;headerlink&quot; title=&quot;Burnside’s lemma&quot;&gt;&lt;/a&gt;Burnside’s lemma&lt;/h1&gt;&lt;h2 id=&quot;问题引入&quot;&gt;&lt;a 
       
     
     </summary>
     
     
-      <category term="[object Object]" scheme="http://yoursite.com/tags/object-Object/"/>
+      <category term="Mathematics" scheme="http://yoursite.com/tags/Mathematics/"/>
     
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2018/12/29/BurnSide-Lemma/"/>
-    <id>http://yoursite.com/2018/12/29/BurnSide-Lemma/</id>
-    <published>2018-12-29T06:41:10.930Z</published>
-    <updated>2018-12-29T12:29:28.924Z</updated>
+      <category term="GroupTheory" scheme="http://yoursite.com/tags/GroupTheory/"/>
     
-    <content type="html"><![CDATA[<ul><li><h1 id="My-understanding-of-Bayes’-Rules"><a href="#My-understanding-of-Bayes’-Rules" class="headerlink" title="My understanding of Bayes’ Rules"></a>My understanding of Bayes’ Rules</h1><ul><li><p>For a long time, I can’t firgue out why we need Bayes’ Rules. I’d like to write something about it after I reader <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank" rel="noopener">Wikipedia of Bayes’ theorem</a></p></li><li><p>The statement of Bayes’ theorem is <script type="math/tex">\lbrace表达式\rbrace</script>. I understand the meaning of this formula, but I can’t understand the practical significance of this formula.</p></li></ul></li></ul>]]></content>
+      <category term="CountProblem" scheme="http://yoursite.com/tags/CountProblem/"/>
     
-    <summary type="html">
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
     
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;&lt;h1 id=&quot;My-understanding-of-Bayes’-Rules&quot;&gt;&lt;a href=&quot;#My-understanding-of-Bayes’-Rules&quot; class=&quot;headerlink&quot; title=&quot;My understanding of
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/12/29/hello-world/"/>
-    <id>http://yoursite.com/2018/12/29/hello-world/</id>
-    <published>2018-12-29T04:46:30.654Z</published>
-    <updated>2018-12-29T04:46:30.654Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
     
   </entry>
   
