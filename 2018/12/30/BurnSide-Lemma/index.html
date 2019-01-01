@@ -31,7 +31,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2018/12/30/BurnSide-Lemma/colour_symmetries.png">
 <meta property="og:image" content="http://yoursite.com/2018/12/30/BurnSide-Lemma/question.png">
-<meta property="og:updated_time" content="2019-01-01T06:38:06.044Z">
+<meta property="og:updated_time" content="2019-01-01T06:40:34.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BurnSide&#39;s Lemma">
 <meta name="twitter:description" content="Burnside’s lemma问题引入 利用三种颜色给一个正三边形的顶点着色，在考虑图案重复的情况下总共有多少不同的着色方法？  上面的着色问题是一类计数问题，在计数的过程中由于需要考虑到去除重复的元素，所以问题会显得比较复杂  Figure 1   以上图为例，六种三角形的着色实际是等价的，只能算一种着色方式。   Burnside’s lemma定义  Burnside’s lemma, s">
@@ -235,13 +235,13 @@ $$|X/G|={\frac  {1}{|G|}}\sum _{{g\in G}}|X^{g}|$$
 &对任一(x_1,x_2)属于\Phi_j, x_1 = x_2+kd\ (mod\ n)\\
 &对于同一\Phi中的顶点，颜色应该一致，总的着色数有m^{i+1}
 \end{align}</script></li>
-<li><p>对称变换教容易，考虑奇偶分类处理即可</p>
+<li><p>对称变换较容易，考虑奇偶分类处理即可</p>
 </li>
 </ul>
 </li>
 <li><p>Python代码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> step <span class="keyword">in</span> range(n):</span><br><span class="line">    count = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        count[i] = <span class="number">0</span></span><br><span class="line">    uncount, ucNow, ucAll = <span class="keyword">True</span>, <span class="number">0</span>, []</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        ucFirst, orbitSet = <span class="number">0</span>, []</span><br><span class="line">        <span class="keyword">while</span> ucFirst != n:</span><br><span class="line">            <span class="keyword">if</span> count[ucFirst] == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ucFirst += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> ucFirst == n:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        i = ucFirst</span><br><span class="line">        <span class="keyword">while</span> count[i] != <span class="number">1</span>:</span><br><span class="line">            orbitSet.append(i)</span><br><span class="line">            count[i] = <span class="number">1</span></span><br><span class="line">            i = (i+step)%n </span><br><span class="line">        ucNow += <span class="number">1</span></span><br><span class="line">//模拟得出所有的orbitSet集合，例如n=<span class="number">10</span>，step=<span class="number">2</span>时，orbitSet集合为</span><br><span class="line">[<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
-<p>通过证明可以得到$#\Phi = grd(n, d)$, 这样就不用计算每个集合的元素，直接可以得到集合个数</p>
+<p>通过证明可以得到$|\Phi| = grd(n, d)$, 这样就不用计算每个集合的元素，直接可以得到集合个数</p>
 <p>对称变换太简单，这里不详细说明。</p>
 </li>
 <li><p><a href="https://codeforces.com/blog/entry/51272" target="_blank" rel="noopener">其它类似问题</a></p>
@@ -255,7 +255,7 @@ $$|X/G|={\frac  {1}{|G|}}\sum _{{g\in G}}|X^{g}|$$
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-01-01T06:38:06.044Z" itemprop="dateUpdated">2019-01-01 14:38:06</time>
+    Last updated: <time datetime="2019-01-01T06:40:34.277Z" itemprop="dateUpdated">2019-01-01 14:40:34</time>
 </span><br>
 
 
