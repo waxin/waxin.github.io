@@ -30,7 +30,7 @@
 <meta property="og:description" content="Josephus Problem问题引入 In computer science and mathematics, the Josephus problem (or Josephus permutation) is a theoretical problem related to a certain counting-out game. People are standing in a circl">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/01/05/Josephus-Problem/josephus%20example.png">
-<meta property="og:updated_time" content="2019-01-12T02:36:42.178Z">
+<meta property="og:updated_time" content="2019-01-12T02:39:50.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Josephus Problem">
 <meta name="twitter:description" content="Josephus Problem问题引入 In computer science and mathematics, the Josephus problem (or Josephus permutation) is a theoretical problem related to a certain counting-out game. People are standing in a circl">
@@ -285,23 +285,30 @@
   \end{align}</script><p>  第一次看到上面的结果，我确实很开心，感觉这种形式很漂亮。不过让我更惊喜的是不仅在基础情况下，在复杂的情况下我们也可以利用上面的形式来求解递归式。</p>
 <p>为了叙述简便，把递归式中$f(dn)$ 中d称为step，下面一般化以d为基础</p>
 <h2 id="问题一般化"><a href="#问题一般化" class="headerlink" title="问题一般化"></a>问题一般化</h2><h3 id="Step-2"><a href="#Step-2" class="headerlink" title="Step=2"></a>Step=2</h3><ul>
-<li><p>step=2与上面解决的问题有很大重合，问题形式化表达如下</p>
-<script type="math/tex; mode=display">
+<li>step=2与上面解决的问题有很大重合，问题形式化表达如下<script type="math/tex; mode=display">
 \begin{align}
 问题2
   \begin{cases}
   f(1) &=& \alpha\\
   f(2n+j) &=& 2·f(n)+\beta_j \ \ (j=0, 1)
   \end{cases}
-  \end{align}</script><p>问题2与问题1的唯一区别是对$\alpha,\beta_j$进行了一般化，在问题1中$\alpha=1,\beta_0=-1, \beta_1=1$</p>
-</li>
-<li><p>$$<br>\begin{align}<br>&amp;首先将n=2^m+l表示为二进制的形式, n=(b_mb_{m-1}…b_1b_0)_2,即n=b_m2^m+..+b_0\\<br>&amp;n = 1, f(1) = \alpha, f((1)_2) = \alpha\\<br>&amp;对j进行分类\\<br>&amp;j=0时l=2·l^<em>\\<br>&amp;f(n)=2f(2^{m-1}+l</em>)+\beta_0\\<br>&amp;f((b_mb_{m-1}…b_1b_0)_2)=2f((b_mb_{m-1}…b_1)_2)+\beta_0\\<br>&amp;f((b_mb_{m-1}…b_1b_0)_2)=(b_mb_{m-1}…b_1\beta_0)_2), 显然有b0=0\\<br>&amp;f((b_mb_{m-1}…b_1b_0)_2)=(b_mb_{m-1}…b_1\beta_{b_0})_2)\\<br>&amp;j=1  时类似，可以得到如下结果\\<br>&amp;f((b_mb_{m-1}…b_1b_0)_2)=(\beta_{b_m}\beta_{b_{m-1}}…\beta_{b_0})</p>
-</li>
+  \end{align}</script>问题2与问题1的唯一区别是对$\alpha,\beta_j$进行了一般化，在问题1中$\alpha=1,\beta_0=-1, \beta_1=1$</li>
 </ul>
-<p>  \end{align}</p>
-<p>  $$</p>
-<p>- </p>
+<script type="math/tex; mode=display">
+  \begin{align}
+  &首先将n=2^m+l表示为二进制的形式, n=(b_mb_{m-1}...b_1b_0)_2,即n=b_m2^m+..+b_0\\
+  &n = 1, f(1) = \alpha, f((1)_2) = \alpha\\
+  &对j进行分类\\
+  &j=0时l=2·l^*\\
+  &f(n)=2f(2^{m-1}+l*)+\beta_0\\
+  &f((b_mb_{m-1}...b_1b_0)_2)=2f((b_mb_{m-1}...b_1)_2)+\beta_0\\
+  &f((b_mb_{m-1}...b_1b_0)_2)=(b_mb_{m-1}...b_1\beta_0)_2), 显然有b0=0\\
+  &f((b_mb_{m-1}...b_1b_0)_2)=(b_mb_{m-1}...b_1\beta_{b_0})_2)\\
+  &j=1  时类似，可以得到如下结果\\
+  &f((b_mb_{m-1}...b_1b_0)_2)=(\beta_{b_m}\beta_{b_{m-1}}...\beta_{b_0})
 
+
+  \end{align}</script>
         </div>
 
         <blockquote class="post-copyright">
@@ -309,7 +316,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-01-12T02:36:42.178Z" itemprop="dateUpdated">2019-01-12 10:36:42</time>
+    Last updated: <time datetime="2019-01-12T02:39:50.903Z" itemprop="dateUpdated">2019-01-12 10:39:50</time>
 </span><br>
 
 
