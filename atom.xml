@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-12T03:13:33.218Z</updated>
+  <updated>2019-06-15T02:17:54.604Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pandas common usage</title>
+    <link href="http://yoursite.com/2019/06/10/pandas-common-usage/"/>
+    <id>http://yoursite.com/2019/06/10/pandas-common-usage/</id>
+    <published>2019-06-10T11:24:30.000Z</published>
+    <updated>2019-06-15T02:17:54.604Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="pandas-common-usage"><a href="#pandas-common-usage" class="headerlink" title="pandas common usage"></a>pandas common usage</h1><blockquote><p><em>pandas</em> is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the <a href="https://www.python.org/" target="_blank" rel="noopener">Python</a> programming language.</p><p><a href="https://pandas.pydata.org" target="_blank" rel="noopener">pandas</a></p></blockquote><p>本文主要记录在实践中遇到的一些常见的用法</p><h2 id="一些说明"><a href="#一些说明" class="headerlink" title="一些说明"></a>一些说明</h2><ul><li>df表示<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html" target="_blank" rel="noopener">pandas.DataFrame</a></li></ul><h2 id="dataFrame"><a href="#dataFrame" class="headerlink" title="dataFrame"></a>dataFrame</h2><ul><li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html#pandas.DataFrame.rolling" target="_blank" rel="noopener">rolling</a></p><ul><li><blockquote><p>为了提升数据的准确性，将某个点的取值扩大到包含这个点的一段区间，用区间来进行判断，这个区间就是窗口。移动窗口就是窗口向一端滑行，默认是从右往左</p></blockquote></li><li><p>rolling返回的类可以进行很多数值操作，例如<code>mean(), std(), sum()</code>,这些均是dataFrame包含的方法</p></li></ul></li><li><p><a href="https://pandas.pydata.org/pandas-docs/version/0.21/generated/pandas.DataFrame.dropna.html#pandas.DataFrame.dropna" target="_blank" rel="noopener">dropna</a></p><ul><li>去除空值</li></ul></li><li><p><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html" target="_blank" rel="noopener">Merge, join, and concatenate</a></p><ul><li>对多个dataframe进行合并操作，包括行、列数据</li></ul></li><li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html" target="_blank" rel="noopener">duplicated</a></p><ul><li>判断重复数据</li></ul></li><li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html" target="_blank" rel="noopener">drop_duplicates</a></p><ul><li>​    去除重复数据</li></ul></li><li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html" target="_blank" rel="noopener">group_by</a></p><ul><li>根据某些col对数据进行聚合</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;pandas-common-usage&quot;&gt;&lt;a href=&quot;#pandas-common-usage&quot; class=&quot;headerlink&quot; title=&quot;pandas common usage&quot;&gt;&lt;/a&gt;pandas common usage&lt;/h1&gt;&lt;bloc
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Josephus Problem</title>
