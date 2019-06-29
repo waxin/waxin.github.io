@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-24T07:11:33.899Z</updated>
+  <updated>2019-06-29T01:03:07.153Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>numpy向量化操作</title>
+    <link href="http://yoursite.com/2019/06/29/numpy%E5%90%91%E9%87%8F%E5%8C%96%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2019/06/29/numpy向量化操作/</id>
+    <published>2019-06-29T00:48:14.000Z</published>
+    <updated>2019-06-29T01:03:07.153Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="numpy向量化操作"><a href="#numpy向量化操作" class="headerlink" title="numpy向量化操作"></a>numpy向量化操作</h1><p>本文记录一些常见的利用numpy向量化操作提高运行速度的方法</p><a id="more"></a><h2 id="0-1矩阵的生成"><a href="#0-1矩阵的生成" class="headerlink" title="0\1矩阵的生成"></a>0\1矩阵的生成</h2><ul><li><p>在机器学习中，如果是二分类问题，最后需要将概率矩阵转化为0/1矩阵，如果使用for循环就没有办法利用到numpy的优势</p></li><li><p>下面是几个例子</p></li><li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_ypre</span><span class="params">(A, dim)</span>:</span> </span><br><span class="line">    y_pre = np.zeros((<span class="number">1</span>, dim))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(dim):</span><br><span class="line">        <span class="keyword">if</span> A[<span class="number">0</span>, i] &gt; <span class="number">0.5</span>:</span><br><span class="line">            y_pre[<span class="number">0</span>, i] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> y_pre</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_ypre_vectorize_1</span><span class="params">(A, dim)</span>:</span></span><br><span class="line">    y_pre = np.where(A &lt; <span class="number">0.5</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> y_pre     </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_ypre_vectorize_2</span><span class="params">(A, dim)</span>:</span></span><br><span class="line">    y_pre = np.floor(A + <span class="number">0.5</span>)</span><br><span class="line">    <span class="keyword">return</span> y_pre</span><br></pre></td></tr></table></figure></li><li><p><code>get_ypre</code>函数利用for循环遍历需要转换为0/1矩阵的A矩阵，<code>get_ypre_vectorize_1</code>和<code>get_ypre_vectorize_2</code>分别利用numpy的<a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html" target="_blank" rel="noopener">np.where</a>和<a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.floor.html" target="_blank" rel="noopener">np.floor</a>进行向量化处理，运行时间如下所示</p></li><li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dim = <span class="number">10</span>**<span class="number">7</span></span><br><span class="line">A = np.random.rand(<span class="number">1</span>, dim)</span><br><span class="line">timeit(<span class="keyword">lambda</span>:get_ypre(A, dim), number=<span class="number">1</span>)</span><br><span class="line">out : <span class="number">2.667440585035365</span></span><br><span class="line">timeit(<span class="keyword">lambda</span>:get_ypre_vectorize_1(A, dim), number=<span class="number">1</span>)</span><br><span class="line">out : <span class="number">0.06458032497903332</span></span><br><span class="line">timeit(<span class="keyword">lambda</span>:get_ypre_vectorize_1(A, dim), number=<span class="number">1</span>)</span><br><span class="line">out : <span class="number">0.06309162796242163</span></span><br></pre></td></tr></table></figure></li><li><p>可以看到提升效果比较明显</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;numpy向量化操作&quot;&gt;&lt;a href=&quot;#numpy向量化操作&quot; class=&quot;headerlink&quot; title=&quot;numpy向量化操作&quot;&gt;&lt;/a&gt;numpy向量化操作&lt;/h1&gt;&lt;p&gt;本文记录一些常见的利用numpy向量化操作提高运行速度的方法&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>sklearn common usage</title>
