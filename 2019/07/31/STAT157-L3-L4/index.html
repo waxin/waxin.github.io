@@ -31,7 +31,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/07/31/STAT157-L3-L4/stat157-gradient.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/31/STAT157-L3-L4/autodiff.png">
-<meta property="og:updated_time" content="2019-07-31T12:27:42.564Z">
+<meta property="og:updated_time" content="2019-07-31T12:29:10.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STAT157 L3-L4">
 <meta name="twitter:description" content="STAT157 L3-L4笔记关于课程STAT157的学习笔记 学习时间2019/7/30 - 2019/7/31">
@@ -218,7 +218,7 @@
 <li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[ <span class="number">4.</span>  <span class="number">8.</span>]</span><br><span class="line"> [<span class="number">12.</span> <span class="number">16.</span>]]</span><br><span class="line">&lt;NDArray <span class="number">2</span>x2 @cpu(<span class="number">0</span>)&gt;</span><br></pre></td></tr></table></figure>
 <p>否则为：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">2.</span> <span class="number">4.</span>]</span><br><span class="line"> [<span class="number">6.</span> <span class="number">8.</span>]]</span><br><span class="line">&lt;NDArray <span class="number">2</span>x2 @cpu(<span class="number">0</span>)&gt;</span><br></pre></td></tr></table></figure>
-<p>猜测是，对y进行<code>attach_grad</code>操作后，计算过程为$\frac {\partial z}{\part x}=\frac {\partial z}{\part y}\cdot\frac {\partial y}{\part x}$，但是程序计算$\frac {\partial z}{\part y}=x$，这其实是不正确的，利用符号微分：</p>
+<p>猜测是，对y进行<code>attach_grad</code>操作后，计算过程为$\frac {\partial z}{\partial x}=\frac {\partial z}{\partial y}\cdot\frac {\partial y}{\partial x}$，但是程序计算$\frac {\partial z}{\partial y}=x$，这其实是不正确的，利用符号微分：</p>
 <script type="math/tex; mode=display">
 \begin{align}
 \frac {\partial z}{\partial y} &= \frac {\partial y}{\partial y}\cdot x+\frac {\partial x}{\partial y}\cdot y\\
@@ -247,7 +247,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-07-31T12:27:42.564Z" itemprop="dateUpdated">2019-07-31 20:27:42</time>
+    Last updated: <time datetime="2019-07-31T12:29:10.686Z" itemprop="dateUpdated">2019-07-31 20:29:10</time>
 </span><br>
 
 
