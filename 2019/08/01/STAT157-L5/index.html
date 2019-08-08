@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>STAT157 L5 | Alephn&#39;s Blog | Stay hungry, stay foolish</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="machine lerning,STAT157">
+    <meta name="description" content="STAT157 L5笔记关于课程STAT157的学习笔记 学习时间2019/8/01">
+<meta name="keywords" content="machine lerning,STAT157">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STAT157 L5">
+<meta property="og:url" content="http://yoursite.com/2019/08/01/STAT157-L5/index.html">
+<meta property="og:site_name" content="Alephn&#39;s Blog">
+<meta property="og:description" content="STAT157 L5笔记关于课程STAT157的学习笔记 学习时间2019/8/01">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/08/01/STAT157-L5/definition-1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/01/STAT157-L5/true.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/01/STAT157-L5/predict.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/01/STAT157-L5/L.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/01/STAT157-L5/solution.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/01/STAT157-L5/course.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/01/STAT157-L5/loss.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/01/STAT157-L5/crossEntropy.png">
+<meta property="og:updated_time" content="2019-08-08T00:23:42.499Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="STAT157 L5">
+<meta name="twitter:description" content="STAT157 L5笔记关于课程STAT157的学习笔记 学习时间2019/8/01">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/01/STAT157-L5/definition-1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Alephn&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpeg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Alephn</h5>
+          <a href="mailto:wz520@mail.ustc.edu.cn" title="wz520@mail.ustc.edu.cn" class="mail">wz520@mail.ustc.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/waxin" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">STAT157 L5</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">STAT157 L5</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-01T02:02:26.000Z" itemprop="datePublished" class="page-time">
+  2019-08-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#STAT157-L5笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">STAT157 L5笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Likelihood-Loss-Functions-Logisitic-Regression-Information-Theory"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Likelihood, Loss Functions, Logisitic Regression, Information Theory</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Maximum-Likelihood"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Maximum Likelihood</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Maximum-Likelihood-for-Simple-Linear-Regression"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">Maximum Likelihood for Simple Linear Regression</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Loss-function"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">Loss function</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#logistic-regression"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">logistic regression</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#information-theory"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">information theory</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#课程笔记"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">课程笔记</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-STAT157-L5" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">STAT157 L5</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-01 10:02:26" datetime="2019-08-01T02:02:26.000Z" itemprop="datePublished">2019-08-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="STAT157-L5笔记"><a href="#STAT157-L5笔记" class="headerlink" title="STAT157 L5笔记"></a>STAT157 L5笔记</h1><p>关于课程<a href="https://courses.d2l.ai/berkeley-stat-157/index.html" target="_blank" rel="noopener">STAT157</a>的学习笔记</p>
+<p>学习时间2019/8/01</p>
+ <a id="more"></a>
+<h2 id="Likelihood-Loss-Functions-Logisitic-Regression-Information-Theory"><a href="#Likelihood-Loss-Functions-Logisitic-Regression-Information-Theory" class="headerlink" title="Likelihood, Loss Functions, Logisitic Regression, Information Theory"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/loss.html#" target="_blank" rel="noopener">Likelihood, Loss Functions, Logisitic Regression, Information Theory</a></h2><p>这一节的内容感觉学起来有些吃力，其中有不少内容是本科时候已经接触过多次的，比如极大似然，但是和之前的朴素贝叶斯<a href="http://alephn.xin/2019/07/31/STAT-157-L1-L2/" target="_blank" rel="noopener">STAT-157 L1-L2</a>一样，由于缺乏思考和锻炼，掌握的一直很不牢靠。由于课程中对于这些知识讲解的也比较简略（毕竟默认是先修课程的内容），因此在下面的笔记中会引用到陈希儒教授的<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwj8gPmbzeDjAhUZ7mEKHehSBdkQFjAAegQIARAB&amp;url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F2201479%2F&amp;usg=AOvVaw0RKsZINYs95UOk8xqkATf4" target="_blank" rel="noopener">《概率论与数理统计》</a></p>
+<h3 id="Maximum-Likelihood"><a href="#Maximum-Likelihood" class="headerlink" title="Maximum Likelihood"></a><strong>Maximum Likelihood</strong></h3><ul>
+<li><p>什么是参数估计？</p>
+<ul>
+<li><blockquote>
+<p>设有一个统计总体，以$f(x; \theta_1,\cdots,\theta_k)$记做其总体分布，具体含义视其是连续型还是离散型而定。这个分布包含了$k$个未知参数$\theta_1,\cdots,\theta_k$，参数估计问题的一般提法是：设有了从总体中抽取出的独立同分布样本$X_1, X_2, \cdots, X_n$，要依据这些样本去对$\theta_1,\cdots,\theta_k$的未知值进行估计</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>什么是极大似然估计？</p>
+<ul>
+<li><p>极大似然估计，即<strong>Maximum likelihood estimation(MLE)</strong></p>
+</li>
+<li><blockquote>
+<p>设总体分布为$f(x; \theta_1,\cdots,\theta_k)$，那么样本$X_1, X_2, \cdots, X_n$的分布（概率密度函数或者概率函数）为</p>
+<p>$f(X_1; \theta_1,\cdots,\theta_k)f(X_2; \theta_1,\cdots,\theta_k)\cdots f(X_n; \theta_1,\cdots,\theta_k)$</p>
+<p>记做: $L(X_1, X_2,\cdots, L_n;  \theta_1,\cdots,\theta_k)$</p>
+<p>固定$\theta_1,\cdots,\theta_k$而看作$X_1, X_2, \cdots, X_n$的函数，$L$是一个概率密度函数或概率函数，当把$X_1, X_2, \cdots, X_n$固定而把$\theta_1,\cdots,\theta_k$时称$L$为似然函数，此时$L$反映了在观察结果$X_1, X_2, \cdots, X_n$已知条件下，$\theta_1,\cdots,\theta_k$的各种值的”似然程度”，当满足条件：</p>
+<p>$L(X_1, X_2,\cdots, L_n;  \theta_1^<em>,\cdots,\theta_k^</em>)=max_{\theta_1,\cdots,\theta_k}L(X_1, X_2,\cdots, L_n;  \theta_1,\cdots,\theta_k)$</p>
+<p>我们就用$\theta_1^<em>,\cdots,\theta_k^</em>$作为未知参数的估计</p>
+</blockquote>
+</li>
+<li><p>一般而言，我们会通过求解$logL=\sum_{i=1}^{n}logf(X_i;\theta_1,\cdots,\theta_k)$的最大值得到$\theta_1^<em>,\cdots,\theta_k^</em>$</p>
+</li>
+</ul>
+</li>
+<li><p>什么是最大后验估计？</p>
+<ul>
+<li><p>最大后验估计，即<strong>Maximum a posteriori estimation(MAP)</strong></p>
+</li>
+<li><p>在极大似然估计中，我们最优化的目标是:$f(X_1; \theta_1,\cdots,\theta_k)f(X_2; \theta_1,\cdots,\theta_k)\cdots f(X_n; \theta_1,\cdots,\theta_k)$，也可以理解为$P(X|\theta)$，我们认为$\theta$是一个确定的未知值，但是在最大后验估计中，我们优化的是$P(\theta|X)$，也就是需要最优化$P(X|\theta)\cdot P(\theta)$</p>
+</li>
+<li><script type="math/tex; mode=display">
+P(\theta|X)=\frac{P(X|\theta)\cdot P(\theta)}{P(X)}</script></li>
+</ul>
+</li>
+</ul>
+<h3 id="Maximum-Likelihood-for-Simple-Linear-Regression"><a href="#Maximum-Likelihood-for-Simple-Linear-Regression" class="headerlink" title="Maximum Likelihood for Simple Linear Regression"></a>Maximum Likelihood for Simple Linear Regression</h3><p>这一小节让我对线性回归有了一个新的认识！虽然一些细节还是不太理解，但是这里还是勉强进行一个总结</p>
+<ul>
+<li>首先回顾一下线性回归问题：给定一系列数据$ (y_i,x_{i1},…,x_{ip})_{i=1}^n$，构建一个线性模型$\hat y=WX+b$来对所有数据进行拟合。一般来说，我们会利用L2 loss来对这个问题进行求解，但是一直以来，好像都没有去思考为什么优化的的L2 loss？</li>
+<li><p><img src="/2019/08/01/STAT157-L5/definition-1.png"></p>
+</li>
+<li><p>利用上面的定义，我们就能把线性回归和概率模型结合起来了（实际上维基百科就是这么定义的，只是这么多年学习线性回归时一直没有接触过。。。），我们最终优化的目标，其实是根据MAP（MLE）来确定的</p>
+<p><img src="/2019/08/01/STAT157-L5/true.png" alt="true"></p>
+</li>
+<li><p>上面就是在给定模型下，$(x, y)$出现的概率密度函数，由于参数未知，将模型写为：</p>
+<p><img src="/2019/08/01/STAT157-L5/predict.png" alt="predict"></p>
+</li>
+<li><p>似然函数L为：</p>
+<p><img src="/2019/08/01/STAT157-L5/L.png" alt="L"></p>
+</li>
+<li><p>最优解为：</p>
+<p><img src="/2019/08/01/STAT157-L5/solution.png" alt="solution"></p>
+</li>
+<li><p>当我们假设误差$\epsilon ～N(0, \sigma^2)$时，参数与最优化L2 loss的解相同。</p>
+</li>
+<li><p>课程中将上面似然函数的优化直接等价于(如下图)最优化L2 loss，这里我不是非常理解</p>
+<p><img src="/2019/08/01/STAT157-L5/course.png" alt="course"></p>
+</li>
+</ul>
+<p>上面的公式均出自<a href="http://www.stat.cmu.edu/~cshalizi/mreg/15/" target="_blank" rel="noopener">36-401, Modern Regression, Section B</a></p>
+<h3 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function"></a>Loss function</h3><p>很抱歉，这一节我基本没有看懂老师在说些什么。。。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/08/01/STAT157-L5/loss.png" alt="loss" title="">
+                </div>
+                <div class="image-caption">loss</div>
+            </figure>
+<p>这张图里面的箭头含有究竟是指什么？或许这部分并不是很重要，暂且略过</p>
+<h3 id="logistic-regression"><a href="#logistic-regression" class="headerlink" title="logistic regression"></a>logistic regression</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/08/01/STAT157-L5/crossEntropy.png" alt="crossEntropy" title="">
+                </div>
+                <div class="image-caption">crossEntropy</div>
+            </figure>
+<h3 id="information-theory"><a href="#information-theory" class="headerlink" title="information theory"></a>information theory</h3><ul>
+<li><p>Entropy：$H[p]=-\sum_i(p_i\cdot lnp_i)$，根据维基百科</p>
+<blockquote>
+<p>在<a href="https://zh.wikipedia.org/wiki/信息论" target="_blank" rel="noopener">信息论</a>中，<strong>熵</strong>（英语：entropy）是接收的每条消息中包含的信息的平均量，又被称为<strong>信息熵</strong>、<strong>信源熵</strong>、<strong>平均自信息量</strong>。</p>
+</blockquote>
+</li>
+<li><p><strong>Kullback-Leibler Divergence</strong>(KL散度)</p>
+<ul>
+<li><blockquote>
+<p><strong>KL散度</strong>是两个概率分布P和Q差别的非对称性的度量。 KL散度是用来 度量使用基于Q的编码来编码来自P的样本平均所需的额外的位元数。 典型情况下，P表示数据的真实分布，Q表示数据的理论分布，模型分布，或P的近似分布。</p>
+<p><a href="https://zh.wikipedia.org/wiki/相对熵" target="_blank" rel="noopener">维基百科</a></p>
+</blockquote>
+</li>
+<li><p>对于离散型随机变量，KL散度为：$D(P||Q)=-\sum_i(P_i(\frac{lnP_i}{lnQ_i}))$</p>
+</li>
+<li><script type="math/tex; mode=display">
+\begin{align}
+D(y||softmax(o))&=-\sum_iy_ilny_i+\sum_iy_ilnsoftmax(o)_i\\
+&=H[y]+(y^To-\sum_iexp(o_i))
+\end{align}</script></li>
+</ul>
+</li>
+</ul>
+<h3 id="课程笔记"><a href="#课程笔记" class="headerlink" title="课程笔记"></a>课程笔记</h3><ul>
+<li><a href="https://github.com/waxin/STAT-157/blob/master/Notebooks/L5/logistic_regression.ipynb" target="_blank" rel="noopener">logistic regression</a></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-08-08T00:23:42.499Z" itemprop="dateUpdated">2019-08-08 08:23:42</time>
+</span><br>
+
+
+        
+        Stay hungry, stay foolish
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Alephn">
+            Alephn
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STAT157/">STAT157</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-lerning/">machine lerning</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/08/01/STAT157-L5/&title=《STAT157 L5》 — Alephn's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/08/01/STAT157-L5/&title=《STAT157 L5》 — Alephn's Blog&source=STAT157 L5笔记关于课程STAT157的学习笔记
+学习时间2019/8/01" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/08/01/STAT157-L5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《STAT157 L5》 — Alephn's Blog&url=http://yoursite.com/2019/08/01/STAT157-L5/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/08/01/STAT157-L5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/31/STAT-157-L1-L2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">STAT-157 L1-L2</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        Thank You~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Alephn &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/08/01/STAT157-L5/&title=《STAT157 L5》 — Alephn's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/08/01/STAT157-L5/&title=《STAT157 L5》 — Alephn's Blog&source=STAT157 L5笔记关于课程STAT157的学习笔记
+学习时间2019/8/01" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/08/01/STAT157-L5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《STAT157 L5》 — Alephn's Blog&url=http://yoursite.com/2019/08/01/STAT157-L5/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/08/01/STAT157-L5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwElEQVR42u3aQW7DMAwEwPz/0ynQaxBnV4xUFxidDCewRhfC5PrxiNfzd13ff71+Xa+/PnYsXFzcMfd5ud5xrxH5/3MDLi7ueW5SpK4PkBS49mm4uLj35+YFqz0GLi7u/+W2B7hucnBxce/PzQcZk8Ymb5y+0Kvh4uIOuO3AdMf1xvkuLi5uyX2Way3X+NruuLi4R7jXA821dqgNY+qBLC4u7mZu2+osDjLK/3woYbi4uEe4bRm6HotMRqsfSh4uLu4Rbhuatk1RW/6iGAYXF/c4tw1BJ01U3iC9LWS4uLgbuGtj0ITVxiRFGoyLi3uEO9++HYauDVNwcXHPcCeHae/n71xFCoSLi7uB2764JLi2kOHi4t6TmzQ8RRRaFrXkYLi4uCe57TA0L155rFKXS1xc3M3ctZePyYcXbXCLi4v7V9z5pxj1xmtTUFxc3IPcfOUD0CQySV6b6uwXFxd3zG0LyiQayZ+Z/IqLi7ub2xavyQwmKWQfhra4uLgHuZOgNNrmux9g4eLi3obbPicPaIumCBcX95bctvDloOjjD1xc3IPcdoM2QJ2MQhZ7NVxc3AF3reOYx6trh8TFxd3M/QFg6b5V3MK+YwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Alephn's Blog';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Alephn's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
