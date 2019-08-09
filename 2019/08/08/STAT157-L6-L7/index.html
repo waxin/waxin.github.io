@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>STAT157 L6-L7 | Alephn&#39;s Blog | Stay hungry, stay foolish</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="machine lerning,STAT157">
+    <meta name="description" content="STAT157 L6-L7笔记关于课程STAT157的学习笔记 学习时间2019/8/08">
+<meta name="keywords" content="machine lerning,STAT157">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STAT157 L6-L7">
+<meta property="og:url" content="http://yoursite.com/2019/08/08/STAT157-L6-L7/index.html">
+<meta property="og:site_name" content="Alephn&#39;s Blog">
+<meta property="og:description" content="STAT157 L6-L7笔记关于课程STAT157的学习笔记 学习时间2019/8/08">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/08/08/STAT157-L6-L7/multilayer">
+<meta property="og:image" content="http://yoursite.com/2019/08/08/STAT157-L6-L7/L2正则化.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/08/STAT157-L6-L7/dropout.png">
+<meta property="og:updated_time" content="2019-08-08T02:17:52.843Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="STAT157 L6-L7">
+<meta name="twitter:description" content="STAT157 L6-L7笔记关于课程STAT157的学习笔记 学习时间2019/8/08">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/08/STAT157-L6-L7/multilayer">
+    
+        <link rel="alternate" type="application/atom+xml" title="Alephn&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpeg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Alephn</h5>
+          <a href="mailto:wz520@mail.ustc.edu.cn" title="wz520@mail.ustc.edu.cn" class="mail">wz520@mail.ustc.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/waxin" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">STAT157 L6-L7</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">STAT157 L6-L7</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-08T00:34:00.000Z" itemprop="datePublished" class="page-time">
+  2019-08-08
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#STAT157-L6-L7笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">STAT157 L6-L7笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Multilayer-Perceptron"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Multilayer Perceptron</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Single-Layer-Perceptron"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Single Layer Perceptron</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Multilayer-Perceptron-1"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">Multilayer Perceptron</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Model-Selection-Weight-Decay-Dropout"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Model Selection, Weight Decay, Dropout</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Model-Selection"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Model Selection</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Weight-decay"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Weight decay</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Drop-out"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">Drop out</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-STAT157-L6-L7" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">STAT157 L6-L7</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-08 08:34:00" datetime="2019-08-08T00:34:00.000Z" itemprop="datePublished">2019-08-08</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="STAT157-L6-L7笔记"><a href="#STAT157-L6-L7笔记" class="headerlink" title="STAT157 L6-L7笔记"></a>STAT157 L6-L7笔记</h1><p>关于课程<a href="https://courses.d2l.ai/berkeley-stat-157/index.html" target="_blank" rel="noopener">STAT157</a>的学习笔记</p>
+<p>学习时间2019/8/08</p>
+ <a id="more"></a>
+<h2 id="Multilayer-Perceptron"><a href="#Multilayer-Perceptron" class="headerlink" title="Multilayer Perceptron"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/mlp.html" target="_blank" rel="noopener">Multilayer Perceptron</a></h2><h3 id="Single-Layer-Perceptron"><a href="#Single-Layer-Perceptron" class="headerlink" title="Single Layer Perceptron"></a><strong>Single Layer Perceptron</strong></h3><ul>
+<li><a href="https://en.wikipedia.org/wiki/Perceptron" target="_blank" rel="noopener">单层感知机</a></li>
+</ul>
+<p>需要注意的是单层感知机的训练算法，以及其算法的收敛性，这些在上面的链接中均有介绍</p>
+<h3 id="Multilayer-Perceptron-1"><a href="#Multilayer-Perceptron-1" class="headerlink" title="Multilayer Perceptron"></a>Multilayer Perceptron</h3><ul>
+<li><a href="https://en.wikipedia.org/wiki/Multilayer_perceptron" target="_blank" rel="noopener">multilayer perceptron</a></li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/08/08/STAT157-L6-L7/multilayer" alt="multilayer perceptron" title="perceptron.png">
+                </div>
+                <div class="image-caption">perceptron.png</div>
+            </figure>
+<ul>
+<li>上面的定义来自<a href="https://zh.d2l.ai/d2l-zh.pdf" target="_blank" rel="noopener">中文版动手学深度学习</a>，若不做说明，下面的图都来自<a href="https://zh.d2l.ai/d2l-zh.pdf" target="_blank" rel="noopener">中文版动手学深度学习</a></li>
+</ul>
+<h2 id="Model-Selection-Weight-Decay-Dropout"><a href="#Model-Selection-Weight-Decay-Dropout" class="headerlink" title="Model Selection, Weight Decay, Dropout"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/capacity.html#model-selection-weight-decay-dropout" target="_blank" rel="noopener">Model Selection, Weight Decay, Dropout</a></h2><h3 id="Model-Selection"><a href="#Model-Selection" class="headerlink" title="Model Selection"></a>Model Selection</h3><ul>
+<li><p>测试集&amp;验证集</p>
+<blockquote>
+<p>在机器学习中，通常需要评估若干候选模型的表现并从中选择模型。这一过程称为模型选择 (model selection)。可供选择的候选模型可以是有着不同超参数的同类模型。以多层感知机为 例，我们可以选择隐藏层的个数，以及每个隐藏层中隐藏单元个数和激活函数。为了得到有效的 模型，我们通常要在模型选择上下一番功夫。下面，我们来描述模型选择中经常使用的验证数据 集(validation data set)。 </p>
+</blockquote>
+</li>
+<li><p>模型复杂度估计</p>
+<ul>
+<li>参数个数</li>
+<li>参数取值范围</li>
+<li>VC Dimension</li>
+</ul>
+</li>
+<li><p>数据复杂度估计</p>
+<ul>
+<li>数据规模</li>
+<li>数据特征数</li>
+<li>数据结构</li>
+<li>数据的多样性</li>
+</ul>
+</li>
+</ul>
+<h3 id="Weight-decay"><a href="#Weight-decay" class="headerlink" title="Weight decay"></a>Weight decay</h3><ul>
+<li><blockquote>
+<p>权重衰减等价于L2 范数正则化(regularization)。正则化通过为模型损失函数添加惩罚项使学出<br>的模型参数值较</p>
+</blockquote>
+<p><img src="/2019/08/08/STAT157-L6-L7/L2正则化.png" alt="L2正则化"></p>
+</li>
+</ul>
+<h3 id="Drop-out"><a href="#Drop-out" class="headerlink" title="Drop out"></a>Drop out</h3><ul>
+<li><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/08/08/STAT157-L6-L7/dropout.png" alt="dropout" title="">
+                </div>
+                <div class="image-caption">dropout</div>
+            </figure>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-08-08T02:17:52.843Z" itemprop="dateUpdated">2019-08-08 10:17:52</time>
+</span><br>
+
+
+        
+        Stay hungry, stay foolish
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Alephn">
+            Alephn
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STAT157/">STAT157</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-lerning/">machine lerning</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&title=《STAT157 L6-L7》 — Alephn's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&title=《STAT157 L6-L7》 — Alephn's Blog&source=STAT157 L6-L7笔记关于课程STAT157的学习笔记
+学习时间2019/8/08" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/08/08/STAT157-L6-L7/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《STAT157 L6-L7》 — Alephn's Blog&url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/01/STAT157-L5/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">STAT157 L5</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        Thank You~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Alephn &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&title=《STAT157 L6-L7》 — Alephn's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&title=《STAT157 L6-L7》 — Alephn's Blog&source=STAT157 L6-L7笔记关于课程STAT157的学习笔记
+学习时间2019/8/08" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/08/08/STAT157-L6-L7/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《STAT157 L6-L7》 — Alephn's Blog&url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3ay3KDMAwF0Pz/T6czXXWROroSacEcVhkmGJ2NsR6PR/l6fl/r3z/vVO4/l9fjExcGBsZlGZXl0qXTsNbvLVExMDBuwOhtsr0Qfwu0vj4GBgbGb8vNQ0lDxMDAwDhqw62/+NTfDQwMjNMz5lvqsSnrB3NxDAyMCzKOagx84vc/9DcwMDBOxngOrnXDcp4MB5FgYGBszaiHkoa1HrmoHCjjNioGBsYNGOmoxASfHkCbVUMMDIyNGCkgLdnPt+Nmzo2BgbEFo16Urx8re6GkpBe5OAYGxg0YlRdPUtP1/cr6bwptGBgYmzLSPmAPPEmD44YEBgbGdox06CodiegdLutbPAYGxh0YaXuyV9ZPRysOaDNgYGBsxJhsuJUtuJ6yTsbLMDAw7syYpK+TPuOa/WJNDAyMrRnziYU0ra38Mx3LwMDAuDNj8sp1KGnKGhTpMDAwtmOkpbRJwlnfuOPDIgYGxtaMYzfcSqGtd/9PvxsYGBinZPTKW/PDX7p+kBljYGBsyqiE0mth1sv6aVr7ZuQCAwNjI0ZveKK3Xc7HzkpPYWBgbMTolfUngxf1TTwotGFgYGzN6B3C0kGx9KlK6M0mKAYGxmUZ9fGIXuktSD7LG2789cDAwNiCMW8Y9MYv0k3/zTkXAwMDo5Vkps+mpT0MDAyMXjtz0hwNQsfAwLgZoz7m1Utoj2p5YmBg3JPRawykB8rm9Md4RAMDA+PijC90t5Nh19tBEAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Alephn's Blog';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Alephn's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
