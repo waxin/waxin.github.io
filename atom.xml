@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-12T04:56:10.417Z</updated>
+  <updated>2019-08-16T01:45:08.492Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STAT157 L10-L11</title>
+    <link href="http://yoursite.com/2019/08/14/STAT157-L10-L11/"/>
+    <id>http://yoursite.com/2019/08/14/STAT157-L10-L11/</id>
+    <published>2019-08-14T02:24:48.000Z</published>
+    <updated>2019-08-16T01:45:08.492Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="STAT157-L10-L11笔记"><a href="#STAT157-L10-L11笔记" class="headerlink" title="STAT157 L10-L11笔记"></a>STAT157 L10-L11笔记</h1><p>关于课程<a href="https://courses.d2l.ai/berkeley-stat-157/index.html" target="_blank" rel="noopener">STAT157</a>的学习笔记</p><p>学习时间2019/8/14</p> <a id="more"></a><h2 id="Layers-Parameters-GPUs"><a href="#Layers-Parameters-GPUs" class="headerlink" title="Layers, Parameters, GPUs"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/layers.html#" target="_blank" rel="noopener">Layers, Parameters, GPUs</a></h2><p>这一节主要讲解了一些利用mxnet编程的知识，也可以参考<a href="http://beta.mxnet.io/guide/packages/gluon/index.html" target="_blank" rel="noopener">MXnet tutorial</a></p><h2 id="Convolutional-Networks"><a href="#Convolutional-Networks" class="headerlink" title="Convolutional Networks"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/convnet.html#" target="_blank" rel="noopener">Convolutional Networks</a></h2><h3 id="Convolutions"><a href="#Convolutions" class="headerlink" title="Convolutions"></a>Convolutions</h3><ul><li><p><a href="https://en.wikipedia.org/wiki/Convolution" target="_blank" rel="noopener">Definition of Convolution</a></p><script type="math/tex; mode=display">\begin{align}(f*g)(x)&=\int_{-\infty}^{\infty}f(\tau)\cdot g(x-\tau)d\tau\\(f*g)(x)&=\sum_{-\infty}^{\infty}f(\tau)\cdot g(x-\tau)\end{align}</script><p>上面是连续以及离散的情况下卷积的定义，需要注意的是积分变量是$\tau$而不是$x$，关于如何理解卷积，可以参考<a href="https://www.zhihu.com/question/22298352" target="_blank" rel="noopener">如何通俗易懂地解释卷积</a>和<a href="http://mengqi92.github.io/2015/10/06/convolution/" target="_blank" rel="noopener">我对卷积的理解</a></p></li><li><p><a href="https://en.wikipedia.org/wiki/Cross-correlation" target="_blank" rel="noopener">Definition of Cross-correlation</a></p><script type="math/tex; mode=display">\begin{align}(f\star g)(x)&=\int_{-\infty}^{\infty}f(\tau)\cdot g(x+\tau)d\tau\\(f\star g)(x)&=\sum_{-\infty}^{\infty}f(\tau)\cdot g(x+\tau)\end{align}</script><p>这里仅仅考虑实数，不涉及复数</p></li><li><p>Rethinking dense layer</p><script type="math/tex; mode=display">h_{i,j}=\sum_{k, l}W_{i,j,k,l}X_{k,l}</script><p>当处理图片时，假设输入的原始状态是二维的，为了保持隐层输出一致，我们可以利用四维的张量来进行变换，具体的公式如上，进行变量代换：</p><script type="math/tex; mode=display">\begin{align}&h_{i,j}=\sum_{a,b}V_{i,j,a,b}X_{i+a,j+b}\\&W_{i,j,i+a,j+b}=V_{i,j,a,b}\end{align}</script><p>假设$V$与$i,j$独立，即$V_{i,j,a,b}=V_{a,b}$，那么:</p><script type="math/tex; mode=display">h_{i,j}=\sum_{a,b}V_{a,b}X_{i+a,j+b}</script><p>可以看到$h$是$V,X$的互相关函数</p><p>当对$X$进行变换得到$h_{i,j}$时，我们关注的区域不会离$X_{i,j}$太远，于是有：</p><script type="math/tex; mode=display">h_{i,j}=\sum_{a=-\Delta}^\Delta \sum_{b=-\Delta}^\Delta V_{a,b}X_{i+a,j+b}</script><p>在$a,b$超出范围时令$V_{a,b}=0$</p></li><li><p>Convolution layer vs. Cross-correlation layer</p><p><img src="/2019/08/14/STAT157-L10-L11/layer.png" alt="layer"></p><p>相比于卷积运算，互相关更能发挥出计算机的cache机制优势</p></li></ul><h3 id="Padding-and-Stride"><a href="#Padding-and-Stride" class="headerlink" title="Padding and Stride"></a>Padding and Stride</h3><ul><li><p>padding：假设卷积核的尺寸为$k_h\times k_w$，输入的尺寸为$n_h\times n_w$，填充$p_h$行，$p_w$列，那么输出的尺寸为：</p><script type="math/tex; mode=display">(n_h-k_h+p_h+1)\times (n_w-k_w+p_w+1)</script><p>一般选择$p_h=k_h-1, p_w=k_w-1$，$k$为奇数，两边填充数为$\frac {p}{2}$,$k$为偶数，一边填充$\lceil \frac p2\rceil$，一边填充$\lfloor\frac p2\rfloor$</p></li><li><p>strides：假设步长为$s_h,s_w$，那么输出尺寸为：</p><script type="math/tex; mode=display">\lfloor (n_h-k_h+p_h+1)/s_h\rfloor\times \lfloor(n_w-k_w+p_w+1)/s_w\rfloor</script></li></ul><h3 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h3><ul><li><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/2019/08/14/STAT157-L10-L11/channel.png" alt="channel" title="">                </div>                <div class="image-caption">channel</div>            </figure></li><li><p>$c$表示channel数，$B$表示bias</p><ul><li><p>Multiple input channels, single output channel</p><p>$X: c_i\times n_h\times n_w$</p><p>$W: c_i\times k_h\times k_w$</p><p>$Y:  m_h\times m_w$</p><p>$Y=\sum_{j=0}^{c_i}X_j\star W_j+B_j$</p></li><li><p>Multiple input&amp;output channels</p><p>$X: c_i\times n_h\times n_w$</p><p>$W: c_o\times  c_i\times k_h\times k_w$</p><p>$Y: c_o\times m_h\times m_w$</p><p>$Y_i=\sum_{j=0}^{c_i}X_j\star W_{i,j}+B_{i,j}$</p></li></ul></li></ul><h3 id="pooling"><a href="#pooling" class="headerlink" title="pooling"></a>pooling</h3><ul><li><p><a href="https://www.quora.com/What-is-the-motivation-for-pooling-in-convolutional-neural-networks-CNN" target="_blank" rel="noopener">Why we need pooling?</a></p><blockquote><p><strong>Rotational/Position Invariance Feature Extraction :</strong> Pooling can also be used for extracting rotational and position invariant feature. Consider the same example of using pooling of size 5x5. Pooling extracts the max value from the given 5x5 region. Basically extract the dominant feature value (max value) from the given region irrespective of the position of the feature value. The max value would be from any position inside the region. Pooling does not capture the position of the max value thus provides rotational/positional invariant feature extraction.</p></blockquote></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;STAT157-L10-L11笔记&quot;&gt;&lt;a href=&quot;#STAT157-L10-L11笔记&quot; class=&quot;headerlink&quot; title=&quot;STAT157 L10-L11笔记&quot;&gt;&lt;/a&gt;STAT157 L10-L11笔记&lt;/h1&gt;&lt;p&gt;关于课程&lt;a href=&quot;https://courses.d2l.ai/berkeley-stat-157/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;STAT157&lt;/a&gt;的学习笔记&lt;/p&gt;
+&lt;p&gt;学习时间2019/8/14&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="machine lerning" scheme="http://yoursite.com/tags/machine-lerning/"/>
+    
+      <category term="STAT157" scheme="http://yoursite.com/tags/STAT157/"/>
+    
+  </entry>
   
   <entry>
     <title>STAT157 L8-L9</title>

@@ -14,29 +14,28 @@
     
     
     
-    <title>STAT157 L6-L7 | Alephn&#39;s Blog | Stay hungry, stay foolish</title>
+    <title>STAT157 L10-L11 | Alephn&#39;s Blog | Stay hungry, stay foolish</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="machine lerning,STAT157">
-    <meta name="description" content="STAT157 L6-L7笔记关于课程STAT157的学习笔记 学习时间2019/8/08">
+    <meta name="description" content="STAT157 L10-L11笔记关于课程STAT157的学习笔记 学习时间2019/8/14">
 <meta name="keywords" content="machine lerning,STAT157">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STAT157 L6-L7">
-<meta property="og:url" content="http://yoursite.com/2019/08/08/STAT157-L6-L7/index.html">
+<meta property="og:title" content="STAT157 L10-L11">
+<meta property="og:url" content="http://yoursite.com/2019/08/14/STAT157-L10-L11/index.html">
 <meta property="og:site_name" content="Alephn&#39;s Blog">
-<meta property="og:description" content="STAT157 L6-L7笔记关于课程STAT157的学习笔记 学习时间2019/8/08">
+<meta property="og:description" content="STAT157 L10-L11笔记关于课程STAT157的学习笔记 学习时间2019/8/14">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/08/08/STAT157-L6-L7/multilayer">
-<meta property="og:image" content="http://yoursite.com/2019/08/08/STAT157-L6-L7/L2正则化.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/08/STAT157-L6-L7/dropout.png">
-<meta property="og:updated_time" content="2019-08-11T03:00:17.585Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/14/STAT157-L10-L11/layer.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/14/STAT157-L10-L11/channel.png">
+<meta property="og:updated_time" content="2019-08-16T01:45:08.492Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="STAT157 L6-L7">
-<meta name="twitter:description" content="STAT157 L6-L7笔记关于课程STAT157的学习笔记 学习时间2019/8/08">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/08/STAT157-L6-L7/multilayer">
+<meta name="twitter:title" content="STAT157 L10-L11">
+<meta name="twitter:description" content="STAT157 L10-L11笔记关于课程STAT157的学习笔记 学习时间2019/8/14">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/14/STAT157-L10-L11/layer.png">
     
         <link rel="alternate" type="application/atom+xml" title="Alephn&#39;s Blog" href="/atom.xml">
     
@@ -110,7 +109,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">STAT157 L6-L7</div>
+        <div class="flex-col header-title ellipsis">STAT157 L10-L11</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -132,11 +131,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">STAT157 L6-L7</h1>
+        <h1 class="title">STAT157 L10-L11</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-08-08T00:34:00.000Z" itemprop="datePublished" class="page-time">
-  2019-08-08
+                <time datetime="2019-08-14T02:24:48.000Z" itemprop="datePublished" class="page-time">
+  2019-08-14
 </time>
 
 
@@ -155,17 +154,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#STAT157-L6-L7笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">STAT157 L6-L7笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Multilayer-Perceptron"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Multilayer Perceptron</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Single-Layer-Perceptron"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Single Layer Perceptron</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Multilayer-Perceptron-1"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">Multilayer Perceptron</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Model-Selection-Weight-Decay-Dropout"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Model Selection, Weight Decay, Dropout</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Model-Selection"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Model Selection</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Weight-decay"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Weight decay</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Drop-out"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">Drop out</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#STAT157-L10-L11笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">STAT157 L10-L11笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Layers-Parameters-GPUs"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Layers, Parameters, GPUs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Convolutional-Networks"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Convolutional Networks</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Convolutions"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Convolutions</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Padding-and-Stride"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Padding and Stride</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Channel"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">Channel</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pooling"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">pooling</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-STAT157-L6-L7" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-STAT157-L10-L11" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">STAT157 L6-L7</h1>
+        <h1 class="post-card-title">STAT157 L10-L11</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-08-08 08:34:00" datetime="2019-08-08T00:34:00.000Z" itemprop="datePublished">2019-08-08</time>
+            <time class="post-time" title="2019-08-14 10:24:48" datetime="2019-08-14T02:24:48.000Z" itemprop="datePublished">2019-08-14</time>
 
             
 
@@ -178,63 +177,85 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="STAT157-L6-L7笔记"><a href="#STAT157-L6-L7笔记" class="headerlink" title="STAT157 L6-L7笔记"></a>STAT157 L6-L7笔记</h1><p>关于课程<a href="https://courses.d2l.ai/berkeley-stat-157/index.html" target="_blank" rel="noopener">STAT157</a>的学习笔记</p>
-<p>学习时间2019/8/08</p>
+            <h1 id="STAT157-L10-L11笔记"><a href="#STAT157-L10-L11笔记" class="headerlink" title="STAT157 L10-L11笔记"></a>STAT157 L10-L11笔记</h1><p>关于课程<a href="https://courses.d2l.ai/berkeley-stat-157/index.html" target="_blank" rel="noopener">STAT157</a>的学习笔记</p>
+<p>学习时间2019/8/14</p>
  <a id="more"></a>
-<h2 id="Multilayer-Perceptron"><a href="#Multilayer-Perceptron" class="headerlink" title="Multilayer Perceptron"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/mlp.html" target="_blank" rel="noopener">Multilayer Perceptron</a></h2><h3 id="Single-Layer-Perceptron"><a href="#Single-Layer-Perceptron" class="headerlink" title="Single Layer Perceptron"></a><strong>Single Layer Perceptron</strong></h3><ul>
-<li><a href="https://en.wikipedia.org/wiki/Perceptron" target="_blank" rel="noopener">单层感知机</a></li>
-</ul>
-<p>需要注意的是单层感知机的训练算法，以及其算法的收敛性，这些在上面的链接中均有介绍</p>
-<h3 id="Multilayer-Perceptron-1"><a href="#Multilayer-Perceptron-1" class="headerlink" title="Multilayer Perceptron"></a>Multilayer Perceptron</h3><ul>
-<li><a href="https://en.wikipedia.org/wiki/Multilayer_perceptron" target="_blank" rel="noopener">multilayer perceptron</a></li>
-</ul>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2019/08/08/STAT157-L6-L7/multilayer" alt="multilayer perceptron" title="perceptron.png">
-                </div>
-                <div class="image-caption">perceptron.png</div>
-            </figure>
-<ul>
-<li>上面的定义来自<a href="https://zh.d2l.ai/d2l-zh.pdf" target="_blank" rel="noopener">中文版动手学深度学习</a>，若不做说明，下面的图都来自<a href="https://zh.d2l.ai/d2l-zh.pdf" target="_blank" rel="noopener">中文版动手学深度学习</a></li>
-</ul>
-<h2 id="Model-Selection-Weight-Decay-Dropout"><a href="#Model-Selection-Weight-Decay-Dropout" class="headerlink" title="Model Selection, Weight Decay, Dropout"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/capacity.html#model-selection-weight-decay-dropout" target="_blank" rel="noopener">Model Selection, Weight Decay, Dropout</a></h2><h3 id="Model-Selection"><a href="#Model-Selection" class="headerlink" title="Model Selection"></a>Model Selection</h3><ul>
-<li><p>测试集&amp;验证集</p>
-<blockquote>
-<p>在机器学习中，通常需要评估若干候选模型的表现并从中选择模型。这一过程称为模型选择 (model selection)。可供选择的候选模型可以是有着不同超参数的同类模型。以多层感知机为 例，我们可以选择隐藏层的个数，以及每个隐藏层中隐藏单元个数和激活函数。为了得到有效的 模型，我们通常要在模型选择上下一番功夫。下面，我们来描述模型选择中经常使用的验证数据 集(validation data set)。 </p>
-</blockquote>
+<h2 id="Layers-Parameters-GPUs"><a href="#Layers-Parameters-GPUs" class="headerlink" title="Layers, Parameters, GPUs"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/layers.html#" target="_blank" rel="noopener">Layers, Parameters, GPUs</a></h2><p>这一节主要讲解了一些利用mxnet编程的知识，也可以参考<a href="http://beta.mxnet.io/guide/packages/gluon/index.html" target="_blank" rel="noopener">MXnet tutorial</a></p>
+<h2 id="Convolutional-Networks"><a href="#Convolutional-Networks" class="headerlink" title="Convolutional Networks"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/convnet.html#" target="_blank" rel="noopener">Convolutional Networks</a></h2><h3 id="Convolutions"><a href="#Convolutions" class="headerlink" title="Convolutions"></a>Convolutions</h3><ul>
+<li><p><a href="https://en.wikipedia.org/wiki/Convolution" target="_blank" rel="noopener">Definition of Convolution</a></p>
+<script type="math/tex; mode=display">
+\begin{align}
+(f*g)(x)&=\int_{-\infty}^{\infty}f(\tau)\cdot g(x-\tau)d\tau\\
+(f*g)(x)&=\sum_{-\infty}^{\infty}f(\tau)\cdot g(x-\tau)
+\end{align}</script><p>上面是连续以及离散的情况下卷积的定义，需要注意的是积分变量是$\tau$而不是$x$，关于如何理解卷积，可以参考<a href="https://www.zhihu.com/question/22298352" target="_blank" rel="noopener">如何通俗易懂地解释卷积</a>和<a href="http://mengqi92.github.io/2015/10/06/convolution/" target="_blank" rel="noopener">我对卷积的理解</a></p>
 </li>
-<li><p>模型复杂度估计</p>
-<ul>
-<li>参数个数</li>
-<li>参数取值范围</li>
-<li>VC Dimension</li>
-</ul>
+<li><p><a href="https://en.wikipedia.org/wiki/Cross-correlation" target="_blank" rel="noopener">Definition of Cross-correlation</a></p>
+<script type="math/tex; mode=display">
+\begin{align}
+(f\star g)(x)&=\int_{-\infty}^{\infty}f(\tau)\cdot g(x+\tau)d\tau\\
+(f\star g)(x)&=\sum_{-\infty}^{\infty}f(\tau)\cdot g(x+\tau)
+\end{align}</script><p>这里仅仅考虑实数，不涉及复数</p>
 </li>
-<li><p>数据复杂度估计</p>
-<ul>
-<li>数据规模</li>
-<li>数据特征数</li>
-<li>数据结构</li>
-<li>数据的多样性</li>
-</ul>
+<li><p>Rethinking dense layer</p>
+<script type="math/tex; mode=display">
+h_{i,j}=\sum_{k, l}W_{i,j,k,l}X_{k,l}</script><p>当处理图片时，假设输入的原始状态是二维的，为了保持隐层输出一致，我们可以利用四维的张量来进行变换，具体的公式如上，进行变量代换：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+&h_{i,j}=\sum_{a,b}V_{i,j,a,b}X_{i+a,j+b}\\
+&W_{i,j,i+a,j+b}=V_{i,j,a,b}
+\end{align}</script><p>假设$V$与$i,j$独立，即$V_{i,j,a,b}=V_{a,b}$，那么:</p>
+<script type="math/tex; mode=display">
+h_{i,j}=\sum_{a,b}V_{a,b}X_{i+a,j+b}</script><p>可以看到$h$是$V,X$的互相关函数</p>
+<p>当对$X$进行变换得到$h_{i,j}$时，我们关注的区域不会离$X_{i,j}$太远，于是有：</p>
+<script type="math/tex; mode=display">
+h_{i,j}=\sum_{a=-\Delta}^\Delta \sum_{b=-\Delta}^\Delta V_{a,b}X_{i+a,j+b}</script><p>在$a,b$超出范围时令$V_{a,b}=0$</p>
+</li>
+<li><p>Convolution layer vs. Cross-correlation layer</p>
+<p><img src="/2019/08/14/STAT157-L10-L11/layer.png" alt="layer"></p>
+<p>相比于卷积运算，互相关更能发挥出计算机的cache机制优势</p>
 </li>
 </ul>
-<h3 id="Weight-decay"><a href="#Weight-decay" class="headerlink" title="Weight decay"></a>Weight decay</h3><ul>
-<li><blockquote>
-<p>权重衰减等价于L2 范数正则化(regularization)。正则化通过为模型损失函数添加惩罚项使学出<br>的模型参数值较</p>
-</blockquote>
-<p><img src="/2019/08/08/STAT157-L6-L7/L2正则化.png" alt="L2正则化"></p>
+<h3 id="Padding-and-Stride"><a href="#Padding-and-Stride" class="headerlink" title="Padding and Stride"></a>Padding and Stride</h3><ul>
+<li><p>padding：假设卷积核的尺寸为$k_h\times k_w$，输入的尺寸为$n_h\times n_w$，填充$p_h$行，$p_w$列，那么输出的尺寸为：</p>
+<script type="math/tex; mode=display">
+(n_h-k_h+p_h+1)\times (n_w-k_w+p_w+1)</script><p>一般选择$p_h=k_h-1, p_w=k_w-1$，$k$为奇数，两边填充数为$\frac {p}{2}$,$k$为偶数，一边填充$\lceil \frac p2\rceil$，一边填充$\lfloor\frac p2\rfloor$</p>
 </li>
+<li><p>strides：假设步长为$s_h,s_w$，那么输出尺寸为：</p>
+<script type="math/tex; mode=display">
+\lfloor (n_h-k_h+p_h+1)/s_h\rfloor\times \lfloor(n_w-k_w+p_w+1)/s_w\rfloor</script></li>
 </ul>
-<h3 id="Drop-out"><a href="#Drop-out" class="headerlink" title="Drop out"></a>Drop out</h3><ul>
+<h3 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h3><ul>
 <li><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2019/08/08/STAT157-L6-L7/dropout.png" alt="dropout" title="">
+                    <img src="/2019/08/14/STAT157-L10-L11/channel.png" alt="channel" title="">
                 </div>
-                <div class="image-caption">dropout</div>
-            </figure></li>
+                <div class="image-caption">channel</div>
+            </figure>
+</li>
+<li><p>$c$表示channel数，$B$表示bias</p>
+<ul>
+<li><p>Multiple input channels, single output channel</p>
+<p>$X: c_i\times n_h\times n_w$</p>
+<p>$W: c_i\times k_h\times k_w$</p>
+<p>$Y:  m_h\times m_w$</p>
+<p>$Y=\sum_{j=0}^{c_i}X_j\star W_j+B_j$</p>
+</li>
+<li><p>Multiple input&amp;output channels</p>
+<p>$X: c_i\times n_h\times n_w$</p>
+<p>$W: c_o\times  c_i\times k_h\times k_w$</p>
+<p>$Y: c_o\times m_h\times m_w$</p>
+<p>$Y_i=\sum_{j=0}^{c_i}X_j\star W_{i,j}+B_{i,j}$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pooling"><a href="#pooling" class="headerlink" title="pooling"></a>pooling</h3><ul>
+<li><p><a href="https://www.quora.com/What-is-the-motivation-for-pooling-in-convolutional-neural-networks-CNN" target="_blank" rel="noopener">Why we need pooling?</a></p>
+<blockquote>
+<p><strong>Rotational/Position Invariance Feature Extraction :</strong> Pooling can also be used for extracting rotational and position invariant feature. Consider the same example of using pooling of size 5x5. Pooling extracts the max value from the given 5x5 region. Basically extract the dominant feature value (max value) from the given region irrespective of the position of the feature value. The max value would be from any position inside the region. Pooling does not capture the position of the max value thus provides rotational/positional invariant feature extraction.</p>
+</blockquote>
+</li>
 </ul>
 
         </div>
@@ -244,7 +265,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-11T03:00:17.585Z" itemprop="dateUpdated">2019-08-11 11:00:17</time>
+    最后更新时间：<time datetime="2019-08-16T01:45:08.492Z" itemprop="dateUpdated">2019-08-16 09:45:08</time>
 </span><br>
 
 
@@ -280,7 +301,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&title=《STAT157 L6-L7》 — Alephn's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/08/14/STAT157-L10-L11/&title=《STAT157 L10-L11》 — Alephn's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -290,23 +311,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&title=《STAT157 L6-L7》 — Alephn's Blog&source=STAT157 L6-L7笔记关于课程STAT157的学习笔记
-学习时间2019/8/08" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/08/14/STAT157-L10-L11/&title=《STAT157 L10-L11》 — Alephn's Blog&source=STAT157 L10-L11笔记关于课程STAT157的学习笔记
+学习时间2019/8/14" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/08/08/STAT157-L6-L7/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/08/14/STAT157-L10-L11/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《STAT157 L6-L7》 — Alephn's Blog&url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《STAT157 L10-L11》 — Alephn's Blog&url=http://yoursite.com/2019/08/14/STAT157-L10-L11/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/08/14/STAT157-L10-L11/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -326,21 +347,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/08/11/STAT157-L8-L9/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">STAT157 L8-L9</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/08/01/STAT157-L5/" id="post-next" class="post-nav-link">
+      <a href="/2019/08/11/STAT157-L8-L9/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">STAT157 L5</h4>
+        <h4 class="title">STAT157 L8-L9</h4>
       </a>
     </div>
   
@@ -445,7 +459,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&title=《STAT157 L6-L7》 — Alephn's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/08/14/STAT157-L10-L11/&title=《STAT157 L10-L11》 — Alephn's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -455,23 +469,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&title=《STAT157 L6-L7》 — Alephn's Blog&source=STAT157 L6-L7笔记关于课程STAT157的学习笔记
-学习时间2019/8/08" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/08/14/STAT157-L10-L11/&title=《STAT157 L10-L11》 — Alephn's Blog&source=STAT157 L10-L11笔记关于课程STAT157的学习笔记
+学习时间2019/8/14" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/08/08/STAT157-L6-L7/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/08/14/STAT157-L10-L11/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《STAT157 L6-L7》 — Alephn's Blog&url=http://yoursite.com/2019/08/08/STAT157-L6-L7/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《STAT157 L10-L11》 — Alephn's Blog&url=http://yoursite.com/2019/08/14/STAT157-L10-L11/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/08/08/STAT157-L6-L7/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/08/14/STAT157-L10-L11/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -482,7 +496,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3ay3KDMAwF0Pz/T6czXXWROroSacEcVhkmGJ2NsR6PR/l6fl/r3z/vVO4/l9fjExcGBsZlGZXl0qXTsNbvLVExMDBuwOhtsr0Qfwu0vj4GBgbGb8vNQ0lDxMDAwDhqw62/+NTfDQwMjNMz5lvqsSnrB3NxDAyMCzKOagx84vc/9DcwMDBOxngOrnXDcp4MB5FgYGBszaiHkoa1HrmoHCjjNioGBsYNGOmoxASfHkCbVUMMDIyNGCkgLdnPt+Nmzo2BgbEFo16Urx8re6GkpBe5OAYGxg0YlRdPUtP1/cr6bwptGBgYmzLSPmAPPEmD44YEBgbGdox06CodiegdLutbPAYGxh0YaXuyV9ZPRysOaDNgYGBsxJhsuJUtuJ6yTsbLMDAw7syYpK+TPuOa/WJNDAyMrRnziYU0ra38Mx3LwMDAuDNj8sp1KGnKGhTpMDAwtmOkpbRJwlnfuOPDIgYGxtaMYzfcSqGtd/9PvxsYGBinZPTKW/PDX7p+kBljYGBsyqiE0mth1sv6aVr7ZuQCAwNjI0ZveKK3Xc7HzkpPYWBgbMTolfUngxf1TTwotGFgYGzN6B3C0kGx9KlK6M0mKAYGxmUZ9fGIXuktSD7LG2789cDAwNiCMW8Y9MYv0k3/zTkXAwMDo5Vkps+mpT0MDAyMXjtz0hwNQsfAwLgZoz7m1Utoj2p5YmBg3JPRawykB8rm9Md4RAMDA+PijC90t5Nh19tBEAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aQY6DMAwF0N7/0h1pVpU6MN92KpXwWCEEIS8Ly47zeMTX8/d6vX99krz5/tX7COcjL7gwMDAuy3ieXkfvVNmr/ns4BwwMjBsw5kE2D5RHyCQoHz7HwMDACH6WU8+ni4GBgbGKkdSS+ZNeWomBgXE3RnVrLEnmeoH147U4BgbGBRnzsvNz9x/vb2BgYHw941m8zkvWXsheMCsMDIytGcm0qj/LpzgJ/VGGi4GBsRFjbUGbN0GroXxZsoiBgXFBRvLZPMnrrWu+YYeBgXEHRh4okyCbJ469o6uHRSwGBsamjEnKOIGVQ+q8DMbAwLgsIx80X49eqE2W4HAOGBgYWzPyKfY21M5HzscslMQYGBgbMVYFzVXbZ8mbh2dGMDAwtmZMUrR5xVxNTP/4FgMDY2tG0qTsTahapiZJYRToMTAwbsDIG4qTzbXJ1t4/4RgDA2NTxqqAmDcM8sMZhfExMDBuycjvq0E2D9OFDT4MDIytGdVjDasak5PSt5DhYmBgXJxRDXbzcjQP8YXlwMDAuA1jkgjOE74eY5TbYmBgXIQx2RTrFZnz42WFZcLAwNiCMdmOrx6k6LUtm81LDAyMjRi9pK36g2pjoDcaBgbG3owkyE6OQcyPcTQ7sRgYGNsxkiA7OWCRLNOoFsfAwMCIf1zdmJsfy8DAwMDIw2gefKtBPNrgw8DAuAGjWsQ+Wld+pKxc4mJgYGzN6DUGklblfPykCYqBgbE14we9fLc9RZO7UQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
