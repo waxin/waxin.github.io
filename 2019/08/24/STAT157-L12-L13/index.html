@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>STAT157 L12-L13 | Alephn&#39;s Blog | Stay hungry, stay foolish</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="machine lerning,STAT157">
+    <meta name="description" content="STAT157 L12-L13笔记关于课程STAT157的学习笔记 学习时间2019/8/24">
+<meta name="keywords" content="machine lerning,STAT157">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STAT157 L12-L13">
+<meta property="og:url" content="http://yoursite.com/2019/08/24/STAT157-L12-L13/index.html">
+<meta property="og:site_name" content="Alephn&#39;s Blog">
+<meta property="og:description" content="STAT157 L12-L13笔记关于课程STAT157的学习笔记 学习时间2019/8/24">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/08/24/STAT157-L12-L13/LeNet.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/24/STAT157-L12-L13/Inception.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/24/STAT157-L12-L13/s4.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/24/STAT157-L12-L13/s5.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/24/STAT157-L12-L13/resnet.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/24/STAT157-L12-L13/ResNext.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/24/STAT157-L12-L13/DenseNet.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/24/STAT157-L12-L13/densenet-2.png">
+<meta property="og:updated_time" content="2019-08-29T02:25:16.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="STAT157 L12-L13">
+<meta name="twitter:description" content="STAT157 L12-L13笔记关于课程STAT157的学习笔记 学习时间2019/8/24">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/24/STAT157-L12-L13/LeNet.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Alephn&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpeg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Alephn</h5>
+          <a href="mailto:wz520@mail.ustc.edu.cn" title="wz520@mail.ustc.edu.cn" class="mail">wz520@mail.ustc.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/waxin" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">STAT157 L12-L13</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">STAT157 L12-L13</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-24T01:55:23.000Z" itemprop="datePublished" class="page-time">
+  2019-08-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#STAT157-L12-L13笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">STAT157 L12-L13笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LeNet-AlexNet-VGG-NiN"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">LeNet, AlexNet, VGG, NiN</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LeNet"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">LeNet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AlexNet"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">AlexNet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#VGG"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">VGG</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NIN"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">NIN</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Residual-Networks-and-Advanced-Architectures"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Residual Networks and Advanced Architectures</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Inception"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Inception</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Batch-Normalization"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Batch Normalization</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ResNet"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">ResNet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ResNext"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">ResNext</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DenseNet"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">DenseNet</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-STAT157-L12-L13" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">STAT157 L12-L13</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-24 09:55:23" datetime="2019-08-24T01:55:23.000Z" itemprop="datePublished">2019-08-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="STAT157-L12-L13笔记"><a href="#STAT157-L12-L13笔记" class="headerlink" title="STAT157 L12-L13笔记"></a>STAT157 L12-L13笔记</h1><p>关于课程<a href="https://courses.d2l.ai/berkeley-stat-157/index.html" target="_blank" rel="noopener">STAT157</a>的学习笔记</p>
+<p>学习时间2019/8/24</p>
+ <a id="more"></a>
+<h2 id="LeNet-AlexNet-VGG-NiN"><a href="#LeNet-AlexNet-VGG-NiN" class="headerlink" title="LeNet, AlexNet, VGG, NiN"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/lenet.html" target="_blank" rel="noopener">LeNet, AlexNet, VGG, NiN</a></h2><h3 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/08/24/STAT157-L12-L13/LeNet.png" alt="LeNet" title="">
+                </div>
+                <div class="image-caption">LeNet</div>
+            </figure>
+<blockquote>
+<p>卷积层块里的基本单位是卷积层后接最大池化层:卷积层用来识别图像里的空间模式，如线条和物体局部，之后的<strong>最大池化层则用来降低卷积层对位置的敏感性</strong>。卷积层块由两个这样的基本单位重复堆叠构成。在卷积层块中，每个卷积层都使用5 × 5的窗口，并在输出上使用sigmoid激活函数。第一个卷积层输出通道数为6，第二个卷积层输出通道数则增加到16。这是因为第二个卷积层比第一个卷积层的输入的高和宽要小，所以增加输出通道使两个卷积层的参数尺寸类似。卷积层块的两个最大池化层的窗口形状均为2 × 2，且步幅为2。由于池化窗口与步幅形状相同，池化窗口在输入上每次滑动所覆盖的区域互不重叠。</p>
+</blockquote>
+<h3 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h3><blockquote>
+<p>第一，与相对较小的LeNet相比，AlexNet包含8层变换，其中有5层卷积和2层全连接隐藏层，以 及1个全连接输出层。下面我们来详细描述这些层的设计。 AlexNet第一层中的卷积窗口形状是11 × 11。因为ImageNet中绝大多数图像的高和宽均 比MNIST图像的高和宽大10倍以上，ImageNet图像的物体占用更多的像素，所以需要更大的卷 积窗口来捕获物体。第二层中的卷积窗口形状减小到5 × 5，之后全采用3 × 3。此外，第一、第二 和第五个卷积层之后都使用了窗口形状为3 × 3、步幅为2的最大池化层。而且，AlexNet使用的卷 积通道数也大于LeNet中的卷积通道数数十倍。 紧接着最后一个卷积层的是两个输出个数为4096的全连接层。这两个巨大的全连接层带来将近1 GB的模型参数。由于早期显存的限制，最早的AlexNet使用双数据流的设计使一个GPU只需要处  理一半模型。幸运的是，显存在过去几年得到了⻓足的发展，因此通常我们不再需要这样的特别 设计了。 </p>
+<p>第二，AlexNet将sigmoid激活函数改成了更加简单的ReLU激活函数。一方面，ReLU激活函数的 计算更简单，例如它并没有sigmoid激活函数中的求幂运算。另一方面，ReLU激活函数在不同的 参数初始化方法下使模型更容易训练。这是由于当sigmoid激活函数输出极接近0或1时，这些区 域的梯度几乎为0，从而造成反向传播无法继续更新部分模型参数;而ReLU激活函数在正区间的 梯度恒为1。因此，若模型参数初始化不当，sigmoid函数可能在正区间得到几乎为0的梯度，从 而令模型无法得到有效训练。 </p>
+<p>第三，AlexNet通过丢弃法(参⻅“丢弃法”一节)来控制全连接层的模型复杂度。而LeNet并没 有使用丢弃法。 </p>
+<p>第四，AlexNet引入了大量的图像增广，如翻转、裁剪和颜色变化，从而进一步扩大数据集来缓 解过拟合。我们将在后面的“图像增广”一节详细介绍这种方法。 </p>
+</blockquote>
+<h3 id="VGG"><a href="#VGG" class="headerlink" title="VGG"></a>VGG</h3><ul>
+<li><p>VGG块</p>
+<blockquote>
+<p>VGG块的组成规律是:连续使用数个相同的填充为1、窗口形状为3 × 3的卷积层后接上一个步幅为2、窗口形状为2 × 2的最大池化层。卷积层保持输入的高和宽不变，而池化层则对其减半</p>
+</blockquote>
+<p>注意一个VGG块内仅含有一个池化层，可能含有多个卷积层</p>
+</li>
+</ul>
+<h3 id="NIN"><a href="#NIN" class="headerlink" title="NIN"></a>NIN</h3><ul>
+<li><blockquote>
+<p>卷积层的输入和输出通常是四维数组(样本，通道，高，宽)，而全连接层的输入和输出则通常是二维数组(样本，特征)。如果想在全连接层后再接上卷积层，则需要将全连接层的输出变换为四维。回忆在“多输入通道和多输出通道”一节里介绍的1 × 1卷积层。它可以看成全连接层，其中空间维度(高和宽)上的每个元素相当于样本，通道相当于特征。因此，NiN使用1 × 1卷积层来替代全连接层，从而使空间信息能够自然传递到后面的层中去。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Residual-Networks-and-Advanced-Architectures"><a href="#Residual-Networks-and-Advanced-Architectures" class="headerlink" title="Residual Networks and Advanced Architectures"></a><a href="https://courses.d2l.ai/berkeley-stat-157/units/resnet.html#residual-networks-and-advanced-architectures" target="_blank" rel="noopener">Residual Networks and Advanced Architectures</a></h2><h3 id="Inception"><a href="#Inception" class="headerlink" title="Inception"></a>Inception</h3><ul>
+<li><p>What？</p>
+<ul>
+<li><p>Inception block<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/08/24/STAT157-L12-L13/Inception.png" alt="Inception" title="">
+                </div>
+                <div class="image-caption">Inception</div>
+            </figure></p>
+</li>
+<li><p><strong>Slicing convolutions</strong></p>
+<p><img src="/2019/08/24/STAT157-L12-L13/s4.png" alt="s4"></p>
+<p><img src="/2019/08/24/STAT157-L12-L13/s5.png" alt="s5"></p>
+</li>
+</ul>
+</li>
+<li><p>Why?</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h3><ul>
+<li><p>What？</p>
+<blockquote>
+<p>one popular and effective technique that has been found to accelerate the convergence of deep net</p>
+</blockquote>
+</li>
+<li><p>How?</p>
+<ul>
+<li><p>全连接层</p>
+<p>对于全连接层，设输入为$\mu$，输出为$x$，或者叫做为仿射变换的输入，权重与偏置为$W,b$，激活函数为$\phi$，用$BN$表示批量归一化的运算符，那么经过了批量统一化的输出为</p>
+<p>$\phi(BN(X))$，其中$x=W\mu+b$</p>
+<p>考虑一个小批量的仿射输出$x=\{x_1,x_2,\cdots,x_m\}$，经过批量归一后$y=BN(x), y_i=BN(x_i)$,具体计算过程如下：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\mu&=\frac1m \sum_{i=1}^mx_i\\
+\delta^2&=\frac1m\sum_{i=1}^m(x_i-\mu)^2\\
+\hat x_i&=\frac{x_i-u}{\sqrt{(\delta^2+\epsilon)}}\\
+y_i&=\gamma\bigodot \hat x_i+\beta
+\end{align}</script></li>
+</ul>
+</li>
+</ul>
+<pre><code>其中$\gamma,\beta$是拉伸和偏移参数
+</code></pre><ul>
+<li><p>卷积层</p>
+<ul>
+<li><blockquote>
+<p>批量归一化发生在卷积计算之后、应用激活函数之前</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>如果卷积计算输出多个通道，我们需要对这些通道的输出分别做批量归一化，且每个通道都拥有独立的拉伸和偏移参数</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>在单个通道上，假设卷积计算输出的高和宽分别为p和q。我们需要对该通道中m × p × q个元素同时做批量归一化</p>
+</blockquote>
+</li>
+</ul>
+<p>需要注意的是第三点，在进行均值运算时是针对某个通道m个样本的所有元素，而在全连接层里m个样本各位置元素独立</p>
+</li>
+<li><p>预测</p>
+<blockquote>
+<p>通过移动平均估算整个训练数据集的样本均值和方差，并在预测时使用它们得到确定的输出</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>Why?</p>
+<ul>
+<li>批量归一化是怎样影响网络的收敛速度的？</li>
+<li>批量归一化和covariate shift的关系？</li>
+<li>卷积层的归一化运算过程中，为什么一个样本的所有元素共同进行均值计算？</li>
+</ul>
+</li>
+</ul>
+<h3 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h3><ul>
+<li><p>What？</p>
+<ul>
+<li><p>残差: 数理统计上, 残差表示实际观测值与估计值 (拟合值) 的差</p>
+</li>
+<li><p>残差块：假设希望学到的理想映射是$H(x)$，那么残差块的目的是学习残差映射$F(x)=H(x)-x$</p>
+<p><img src="/2019/08/24/STAT157-L12-L13/resnet.png" alt="ResNet"></p>
+</li>
+<li></li>
+</ul>
+</li>
+<li><p>How?</p>
+<ul>
+<li>[ ] 完成ResNet的搭建</li>
+</ul>
+</li>
+<li>Why？<ul>
+<li>为什么学习残差映射优于学习理想映射？</li>
+<li>$F(x)=H(x)-x$中的$x$为什么能代表残差？</li>
+</ul>
+</li>
+</ul>
+<h3 id="ResNext"><a href="#ResNext" class="headerlink" title="ResNext"></a>ResNext</h3><ul>
+<li>What？<ul>
+<li><strong>Break up channel</strong></li>
+<li><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/08/24/STAT157-L12-L13/ResNext.png" alt="ResNext" title="">
+                </div>
+                <div class="image-caption">ResNext</div>
+            </figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="DenseNet"><a href="#DenseNet" class="headerlink" title="DenseNet"></a>DenseNet</h3><ul>
+<li><p>What？</p>
+<ul>
+<li><blockquote>
+<p>与ResNet的主要区别在于，DenseNet里模块B的输出不是像ResNet那样和模块A的输出相加，而是在通道维上连结</p>
+</blockquote>
+<p>DenseNet的结构可以抽象为下图：<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/08/24/STAT157-L12-L13/DenseNet.png" alt="DenseNet" title="">
+                </div>
+                <div class="image-caption">DenseNet</div>
+            </figure></p>
+</li>
+<li><p>Function Decomposition</p>
+<ul>
+<li>$f(x)=f(0)+f’(x)x+\frac12f’’(x)x^2+\frac16f’’’(x)x^3+o(x^3)$</li>
+<li>$\mathbf x \rightarrow [\mathbf x, f_1(\mathbf x), f_2(\mathbf x,f_1(\mathbf x)),f_3(\mathbf x,f_1(\mathbf x),f_2(\mathbf x,f_1(\mathbf x))),\cdots]$</li>
+<li><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/08/24/STAT157-L12-L13/densenet-2.png" alt="densenet-2" title="">
+                </div>
+                <div class="image-caption">densenet-2</div>
+            </figure>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>[ ] 稠密块</li>
+<li>[ ] 过渡层</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>How?</p>
+<ul>
+<li><ul>
+<li>[ ] 完成ResNet的搭建</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Why？</p>
+<ul>
+<li>泰勒展开对于DenseNet以及ResNet的启发？</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2019-08-29T02:25:16.187Z" itemprop="dateUpdated">2019-08-29 10:25:16</time>
+</span><br>
+
+
+        
+        Stay hungry, stay foolish
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Alephn">
+            Alephn
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STAT157/">STAT157</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-lerning/">machine lerning</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/08/24/STAT157-L12-L13/&title=《STAT157 L12-L13》 — Alephn's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/08/24/STAT157-L12-L13/&title=《STAT157 L12-L13》 — Alephn's Blog&source=STAT157 L12-L13笔记关于课程STAT157的学习笔记
+学习时间2019/8/24" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/08/24/STAT157-L12-L13/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《STAT157 L12-L13》 — Alephn's Blog&url=http://yoursite.com/2019/08/24/STAT157-L12-L13/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/08/24/STAT157-L12-L13/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/14/STAT157-L10-L11/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">STAT157 L10-L11</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        Thank You~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Alephn &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/08/24/STAT157-L12-L13/&title=《STAT157 L12-L13》 — Alephn's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/08/24/STAT157-L12-L13/&title=《STAT157 L12-L13》 — Alephn's Blog&source=STAT157 L12-L13笔记关于课程STAT157的学习笔记
+学习时间2019/8/24" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/08/24/STAT157-L12-L13/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《STAT157 L12-L13》 — Alephn's Blog&url=http://yoursite.com/2019/08/24/STAT157-L12-L13/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/08/24/STAT157-L12-L13/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aQW7DMAwFUd//0i7QVYHE9nzSCWpqtAqa1OLzghBFbhte++/6+/l1dX75+vvtE0uGDBmPZeynq7bB0XM6+148U4YMGQswakn2PNXy9H30skhsMmTIkEFC7KTXdC8ZMmTIIAx+KOR/SfeVIUPGmozOsa921OOfb67FZciQ8UBGrTHwnc8f72/IkCHj3zP2cJGjHm9Y3haVDBkyRjPOL8s6rUde4nZmKlDXVIYMGQ9n1DY+CoUUt2niRnHKkCFjNIM0F/kQBn8F/Zf45gkyZMhYhlELtHNwJKVyXMTKkCFjAUbaVqzBakkZ1eIyZMgYx+iUnWk5mladHC9DhoypDF5Skiuw9Lot/a/DGGTIkDGakR4Qa9dz6etIRzpkyJCxAqPWEuBUAkuRqL8hQ4aMEQw+6JAGlJaprUs9GTJkLMBIg+aHuXS8jF/kvUm4MmTIGMpIxyn4MEQ/KcfPlyFDxlBG2nTsp+D+jjJkyFiNwVMqD7dWrNYaDxcVuQwZMkYwamfJ/gUZH55Ar0OGDBnLMHga5em1M4TBYTJkyJjNSMtUPmzRH9cgkcQkGTJkPJBRS6nk21pLkh8cL+baZMiQMYjRufqvtS3TUpZf28mQIWM2I02yaZFZaxXwHWXIkLEOgydKsnE6QHZDLS5DhgwZpdYmOTL2xzJkyJAho9bsJJdrHfYNCVeGDBkPZPSLWHK849S4xJUhQ8ZoRqcxUEudafOAj33IkCFjHOMH7HLWLBpuz8UAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Alephn's Blog';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Alephn's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
